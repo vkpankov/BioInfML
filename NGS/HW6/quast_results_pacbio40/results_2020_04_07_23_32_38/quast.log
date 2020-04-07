@@ -1,0 +1,115 @@
+/home/vkpankov/anaconda2/bin/quast pacbio40/assembly.fasta -r reference.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.4.0-19041-Microsoft-x86_64-with-debian-buster-sid (linux_64)
+  Python version: 2.7.16
+  CPUs number: 8
+
+Started: 2020-04-07 23:32:38
+
+Logging to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/quast.log
+NOTICE: Maximum number of threads is set to 2 (use --threads option to set it manually)
+
+CWD: /home/vkpankov/NGS/6
+Main parameters: 
+  MODE: default, threads: 2, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /home/vkpankov/NGS/6/reference.fasta ==> reference
+
+Contigs:
+  Pre-processing...
+  pacbio40/assembly.fasta ==> assembly
+
+2020-04-07 23:32:39
+Running Basic statistics processor...
+  Reference genome:
+    reference.fasta, length = 4639675, num fragments = 1, GC % = 50.79
+  Contig files: 
+    assembly
+  Calculating N50 and L50...
+    assembly, N50 = 4640229, L50 = 1, Total length = 4643865, GC % = 50.79, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/basic_stats/GC_content_plot.pdf
+  Drawing assembly GC content plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/basic_stats/assembly_GC_content_plot.pdf
+Done.
+
+2020-04-07 23:32:41
+Running Contig analyzer...
+  assembly
+  Logging to files /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/contigs_reports/contigs_report_assembly.stdout and contigs_report_assembly.stderr...
+  Aligning contigs to the reference
+  /home/vkpankov/anaconda2/lib/python2.7/site-packages/quast_libs/minimap2/minimap2 \
+  -c -x asm5 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
+  200 -g 2500 --score-N 2 --cs -t 2 quast_results/results_2020_04_07_23_32_38/quast_corrected_input/reference.fasta \
+  quast_results/results_2020_04_07_23_32_38/quast_corrected_input/assembly.fasta > \
+  quast_results/results_2020_04_07_23_32_38/contigs_reports/minimap_output/assembly.coords_tmp \
+  2>> quast_results/results_2020_04_07_23_32_38/contigs_reports/contigs_report_assembly.stderr
+  Analysis is finished.
+
+  Creating total report...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2020-04-07 23:32:44
+Running NA-NGA calculation...
+  assembly, Largest alignment = 3026121, NA50 = 3026121, NGA50 = 3026121, LA50 = 1, LGA50 = 1
+  Drawing cumulative plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/aligned_stats/NGAx_plot.pdf
+Done.
+
+2020-04-07 23:32:45
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  assembly
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2020-04-07 23:32:46
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-04-07 23:32:47
+RESULTS:
+  Text versions of total report are saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/report.html
+  PDF version (tables and plots) is saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/report.pdf
+  Icarus (contig browser) is saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/icarus.html
+  Log is saved to /home/vkpankov/NGS/6/quast_results/results_2020_04_07_23_32_38/quast.log
+
+Finished: 2020-04-07 23:32:48
+Elapsed time: 0:00:09.564841
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
